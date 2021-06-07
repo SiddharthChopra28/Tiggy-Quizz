@@ -1,4 +1,4 @@
-from flask import json
+import json
 import pygame, time, pandas, random, requests
 from pygame.locals import *
 
