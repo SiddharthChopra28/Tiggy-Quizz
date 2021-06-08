@@ -1,4 +1,5 @@
-import pygame, time, random, requests, json
+import json
+import pygame, time, random, requests
 from pygame.locals import *
 
 pygame.font.init()
@@ -74,6 +75,7 @@ while not game_exit:
             break
         raw = requests.get("http://tiggy.herokuapp.com/games/Quizz/questions")
         queslist = json.loads(raw.content)
+        print(queslist)
 
         correctCount = 0
         mouse = pygame.mouse.get_pos()
@@ -108,14 +110,17 @@ while not game_exit:
 
         if qno<11:
             if questionOver:
-                questionset = random.choice(queslist)
-                question = questionset[0]
-                OpA = questionset[1]
-                OpB = questionset[2]
-                OpC = questionset[3]
-                OpD = questionset[4] 
-                correctAnswer = questionset[5]
-                queslist.remove(questionset)
+                print(queslist)
+
+                question = random.choice(queslist.keys())
+                
+
+                OpA = queslist.get(question)[1][0]
+                OpB = queslist.get(question)[1][1]
+                OpC = queslist.get(question)[1][2]
+                OpD = queslist.get(question)[1][3]
+                correctAnswer = queslist.get(question)[0]
+                queslist.pop(question)
                 questionOver = False
 
             ycordQ = 100
