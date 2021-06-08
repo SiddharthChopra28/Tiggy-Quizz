@@ -73,7 +73,7 @@ while not game_exit:
     while not game_start and not score_screen:
         if game_exit:
             break
-        raw = requests.get("http://127.0.0.1:5000/games/Quizz/questions")
+        raw = requests.get("http://tiggy.herokuapp.com/games/Quizz/questions")
         queslist = json.loads(raw.content)
 
         correctCount = 0
