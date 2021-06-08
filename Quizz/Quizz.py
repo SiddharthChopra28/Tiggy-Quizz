@@ -75,7 +75,7 @@ while not game_exit:
             break
         raw = requests.get("http://tiggy.herokuapp.com/games/Quizz/questions")
         queslist = json.loads(raw.content)
-        print(queslist)
+        
 
         correctCount = 0
         mouse = pygame.mouse.get_pos()
@@ -110,9 +110,9 @@ while not game_exit:
 
         if qno<11:
             if questionOver:
-                print(queslist)
-
-                question = random.choice(list(queslist.keys()))
+                key_list = list(queslist.keys())
+                
+                question = random.choice(key_list)
                 
 
                 OpA =list( queslist.get(question))[1][0]
