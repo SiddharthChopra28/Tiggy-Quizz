@@ -1,5 +1,5 @@
 import json
-import pygame, time, pandas, random, requests
+import pygame, time, random, requests
 from pygame.locals import *
 
 pygame.font.init()
