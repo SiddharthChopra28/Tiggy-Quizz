@@ -112,14 +112,14 @@ while not game_exit:
             if questionOver:
                 print(queslist)
 
-                question = random.choice(queslist.keys())
+                question = random.choice(list(queslist.keys()))
                 
 
-                OpA = queslist.get(question)[1][0]
-                OpB = queslist.get(question)[1][1]
-                OpC = queslist.get(question)[1][2]
-                OpD = queslist.get(question)[1][3]
-                correctAnswer = queslist.get(question)[0]
+                OpA =list( queslist.get(question))[1][0]
+                OpB = list(queslist.get(question))[1][1]
+                OpC = list(queslist.get(question))[1][2]
+                OpD = list(queslist.get(question))[1][3]
+                correctAnswer = list(queslist.get(question))[0]
                 queslist.pop(question)
                 questionOver = False
 
